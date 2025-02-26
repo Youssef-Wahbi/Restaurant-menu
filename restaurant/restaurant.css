@@ -1,0 +1,164 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c0404;
+    text-align: center;
+}
+
+/* Full-width logo */
+.logo-container {
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    display: block;
+}
+
+/* Centering the menu container */
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Categories section */
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* More spacing between menu items */
+    margin-top: 20px;
+}
+
+/* Category styling */
+.category {
+    cursor: pointer;
+    background: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.category img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Burger Menu */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin-left: 50px;
+    align-items: flex-start;
+}
+
+/* Each Burger Item */
+.burger-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.burger-item:hover {
+    transform: scale(1.02);
+}
+
+/* Burger Image */
+.burger-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+/* Burger Info (Text) */
+.burger-info {
+    text-align: left;
+}
+
+/* Order Button */
+.order-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.order-btn:hover {
+    background-color: #cc5500;
+    transform: scale(1.4); /* Increases size by 10% */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Back Button */
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #555;
+    transform: scale(1.4);
+}
+

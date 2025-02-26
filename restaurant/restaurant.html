@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+
+    <img class="logo" src="DALL·E 2025-02-25 22.37.33 - A modern restaurant logo featuring a knife and fork crossed behind elegant text that says 'Restaurant Name'. The font is stylish and bold, suitable fo.webp" alt="Restaurant Logo">
+
+
+    <div class="container">
+        <h1>Welcome! Choose Your Meal</h1>
+
+        <div class="categories">
+            <div class="category" onclick="goToMenu('burger')">
+                <img src="download__7_-removebg-preview.png" alt="Burger">
+                <h2>Burger</h2>
+            </div>
+            <div class="category" onclick="goToMenu('pizza')">
+                <img src="download__8_-removebg-preview.png" alt="Pizza">
+                <h2>Pizza</h2>
+            </div>
+            <div class="category" onclick="goToMenu('crepe')">
+                <img src="images__1_-removebg-preview.png" alt="Crepe">
+                <h2>Crepe</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToMenu(category) {
+            window.location.href = category + ".html";
+        }
+    </script>
+
+</body>
+</html>
