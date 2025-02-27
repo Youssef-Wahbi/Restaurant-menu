@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+
+    <div class="cart-container">
+        <h1>🛒 Your Shopping Cart</h1>
+        <ul id="cart-items"></ul>
+        <p id="cart-total">Total: $0.00</p>
+        <button class="cart-btn clear" onclick="clearCart()">Clear Cart</button>
+        <button class="cart-btn back" onclick="goBack()">⬅ Back to Menu</button>
+    </div>
+
+    <script>
+       function loadCart() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartList = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+
+    cartList.innerHTML = ""; 
+    let total = 0;
+
+    cart.forEach(item => {
+        let listItem = document.createElement("li");
+        listItem.classList.add("cart-item");
+
+        let itemImage = document.createElement("img");
+        itemImage.src = item.image;
+        itemImage.alt = item.name;
+        itemImage.classList.add("cart-img");
+
+        let itemDetails = document.createElement("div");
+        itemDetails.innerHTML = `<strong>${item.name}</strong> - $${item.price.toFixed(2)}`;
+
+        listItem.appendChild(itemImage);
+        listItem.appendChild(itemDetails);
+        cartList.appendChild(listItem);
+
+        total += parseFloat(item.price);  // ✅ Ensure price is a number
+    });
+
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+
+
+        
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            loadCart();
+        }
+
+        function goBack() {
+            window.location.href = "restaurant.html";
+        }
+
+        window.onload = loadCart;
+    </script>
+
+</body>
+</html>
+

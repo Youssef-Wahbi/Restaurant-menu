@@ -10,12 +10,18 @@
 
     <!-- Full-width Logo -->
     <div class="logo-container">
-        <img src="DALL·E 2025-02-25 22.37.33 - A modern restaurant logo featuring a knife and fork crossed behind elegant text that says 'Restaurant Name'. The font is stylish and bold, suitable fo.webp" alt="Restaurant Logo" class="logo">
+        <header class="navbar">
+            <img src="logo.webp" alt="Restaurant Logo" class="logo">
+            <button class="back-btn" onclick="goBack()">⬅ Back</button>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <a href="contact.html" class="contact-link">Contact Us</a>
+            <a href="cart.html" class="cart-link">🛒</a>
+        </header>
     </div>
 
     <!-- Pizza Menu Container -->
     <div class="container_burger">
-        <h1>Choose Your Pizza</h1>
+        <h1></h1>
 
         <!-- Pizzas List -->
         <div class="burger-menu">
@@ -25,7 +31,7 @@
                 <div class="burger-info">
                     <h2>Margherita Pizza</h2>
                     <p>Classic pizza with fresh tomato sauce, mozzarella, and basil.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('Margherita Pizza', 7.99, 'download__8_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -34,7 +40,7 @@
                 <div class="burger-info">
                     <h2>Pepperoni Pizza</h2>
                     <p>Delicious pepperoni slices on top of melted cheese and tomato sauce.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('Pepperoni Pizza', 8.99, 'download__8_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -43,7 +49,7 @@
                 <div class="burger-info">
                     <h2>BBQ Chicken Pizza</h2>
                     <p>Smoky BBQ sauce, grilled chicken, onions, and mozzarella cheese.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('BBQ Chicken Pizza', 9.99, 'download__8_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -52,14 +58,13 @@
                 <div class="burger-info">
                     <h2>Veggie Pizza</h2>
                     <p>Loaded with fresh bell peppers, mushrooms, olives, and onions.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('Veggie Pizza', 7.49, 'download__8_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- Back Button -->
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+        
 
     </div>
 
@@ -68,6 +73,8 @@
             window.location.href = "restaurant.html"; // Change this to your homepage file
         }
     </script>
+
+<script src="order.js"></script>
 
 </body>
 </html>

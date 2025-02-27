@@ -10,12 +10,20 @@
 
     <!-- Full-width Logo -->
     <div class="logo-container">
-        <img src="DALL·E 2025-02-25 22.37.33 - A modern restaurant logo featuring a knife and fork crossed behind elegant text that says 'Restaurant Name'. The font is stylish and bold, suitable fo.webp" alt="Restaurant Logo" class="logo">
+        <header class="navbar">
+            <img src="logo.webp" alt="Restaurant Logo" class="logo">
+            <button class="back-btn" onclick="goBack()">⬅ Back</button>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <a href="contact.html" class="contact-link">Contact Us</a>
+            <a href="cart.html" class="cart-link">🛒</a>
+        </header>
+            
+        
     </div>
 
     <!-- Crepe Menu Container -->
     <div class="container_burger">
-        <h1>Choose Your Crepe</h1>
+        <h1></h1>
 
         <!-- Crepes List -->
         <div class="burger-menu">
@@ -25,7 +33,7 @@
                 <div class="burger-info">
                     <h2>Chocolate Crepe</h2>
                     <p>Delicious thin crepe filled with melted chocolate and topped with powdered sugar.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart(' Chocolate crepe', 4.99, 'images__1_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -34,7 +42,7 @@
                 <div class="burger-info">
                     <h2>Strawberry Crepe</h2>
                     <p>Fresh strawberries and whipped cream wrapped in a soft, warm crepe.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('strawberry crepe', 4.99, 'images__1_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -43,7 +51,7 @@
                 <div class="burger-info">
                     <h2>Nutella Crepe</h2>
                     <p>A classic favorite filled with Nutella and topped with banana slices.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('Nutella Crepe', 7.5, 'images__1_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -52,14 +60,13 @@
                 <div class="burger-info">
                     <h2>Savory Crepe</h2>
                     <p>Filled with cheese, ham, and fresh herbs for a tasty savory option.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('savory crepe', 5.99, 'images__1_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- Back Button -->
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+        
 
     </div>
 
@@ -68,6 +75,8 @@
             window.location.href = "restaurant.html"; // Change this to your homepage file
         }
     </script>
+
+<script src="order.js"></script>
 
 </body>
 </html>

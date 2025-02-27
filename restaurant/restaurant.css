@@ -8,8 +8,65 @@
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #0c0404;
+    background-color: white;
     text-align: center;
+
+    background-image: url('ramadan.jpeg'); 
+    background-size: cover;  /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    background-attachment: fixed;
+    height: 100vh; /* Full screen height */
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.search-bar {
+    flex-grow: 1; /* Expands to take space */
+    max-width: 500px; /* Increases size */
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    margin: 0 20px;
+}
+
+.cart-link {
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+}
+.cart-link:hover{
+
+    
+    transform: scale(1.4);
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out elements */
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional background */
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.contact-link {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background: #ff6600;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.contact-link:hover {
+    background: #cc5500;
+    transform: scale(1.4);
 }
 
 /* Full-width logo */
@@ -21,10 +78,12 @@ body {
 }
 
 .logo {
-    width: 100%;
+    width: 15%;
     max-width: 100%;
-    height: 400px;
+    height: 130px;
     display: block;
+    border-radius:100px ;
+    padding:20px;
 }
 
 /* Centering the menu container */
@@ -32,6 +91,8 @@ body {
     width: 90%;
     max-width: 500px;
     margin: 20px auto;
+    margin-top: 200px;
+    margin-bottom: 50px;
     background: white;
     padding: 20px;
     border-radius: 15px;
@@ -59,13 +120,14 @@ h1 {
     border: 2px solid #ddd;
     border-radius: 10px;
     padding: 20px;
+    margin: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
 .category img {
     width: 100%;
-    height: 150px;
+    height: 220px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -85,7 +147,10 @@ h1 {
 
 
 
+.container_burger{
 
+    margin-top: 150px;
+}
 /* Burger Menu */
 .burger-menu {
     display: flex;
@@ -161,4 +226,81 @@ h1 {
     background: #555;
     transform: scale(1.4);
 }
+
+
+
+
+
+
+
+.cart-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.cart-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.cart-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.cart-details h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.cart-details p {
+    font-size: 16px;
+    color: #666;
+}
+
+.cart-btn {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.cart-btn:hover {
+    background: #e65c00;
+}
+
+.clear {
+    background: red;
+}
+
+.clear:hover {
+    background: darkred;
+}
+
 

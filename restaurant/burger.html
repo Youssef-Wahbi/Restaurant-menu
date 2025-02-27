@@ -10,12 +10,18 @@
 
     <!-- Full-width Logo -->
     <div class="logo-container">
-        <img src="DALL·E 2025-02-25 22.37.33 - A modern restaurant logo featuring a knife and fork crossed behind elegant text that says 'Restaurant Name'. The font is stylish and bold, suitable fo.webp" alt="Restaurant Logo" class="logo">
+        <header class="navbar">
+            <img src="logo.webp" alt="Restaurant Logo" class="logo">
+            <button class="back-btn" onclick="goBack()">⬅ Back</button>
+            <input type="text" class="search-bar" placeholder="Search...">
+            <a href="contact.html" class="contact-link">Contact Us</a>
+            <a href="cart.html" class="cart-link">🛒</a>
+        </header>
     </div>
 
     <!-- Burger Menu Container -->
     <div class="container_burger">
-        <h1>Choose Your Burger</h1>
+        <h1></h1>
 
         <!-- Burgers List -->
         <div class="burger-menu">
@@ -25,7 +31,7 @@
                 <div class="burger-info">
                     <h2>Cheese Burger</h2>
                     <p>A delicious beef patty with melted cheese, lettuce, and special sauce.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('Cheeseburger', 5.99, 'download__7_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -34,7 +40,7 @@
                 <div class="burger-info">
                     <h2>Chicken Burger</h2>
                     <p>Crispy fried chicken with fresh lettuce, tomatoes, and mayo.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('chickenburger', 7.11, 'download__7_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -43,7 +49,7 @@
                 <div class="burger-info">
                     <h2>Double Burger</h2>
                     <p>Two juicy beef patties stacked with cheese, lettuce, and pickles.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('double burger', 9.00, 'download__7_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
@@ -52,14 +58,14 @@
                 <div class="burger-info">
                     <h2>Vegan Burger</h2>
                     <p>A plant-based burger with fresh veggies and a tasty vegan sauce.</p>
-                    <button class="order-btn">Order Now</button>
+                    <button class="order-btn" onclick="addToCart('Vegan', 4.5, 'download__7_-removebg-preview.png')">Order Now</button>
                 </div>
             </div>
 
         </div>
 
-        <!-- Back Button -->
-        <button class="back-btn" onclick="goBack()">⬅ Back</button>
+        
+        
 
     </div>
 
@@ -68,6 +74,9 @@
             window.location.href = "restaurant.html"; // Change this to your homepage file
         }
     </script>
+
+<script src="order.js"></script>
+
 
 </body>
 </html>
