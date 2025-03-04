@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 
 /* Body styling */
@@ -20,6 +21,9 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
+    padding-top: 20px;
+    
+   
 }
 
 .search-bar {
@@ -49,7 +53,9 @@ body {
     justify-content: space-between; /* Space out elements */
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.5); /* Optional background */
-    position: absolute;
+    position: fixed; /* Keeps it in place */
+    top: 0;
+    left: 0;
     top: 0;
     width: 100%;
 }
@@ -72,7 +78,8 @@ body {
 /* Full-width logo */
 .logo-container {
     width: 100%;
-    background-color: white;
+    
+    width: 100%;
     padding: 10px 0;
     text-align: center;
 }
@@ -86,15 +93,50 @@ body {
     padding:20px;
 }
 
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; /* Allow wrapping instead of stacking */
+        justify-content: center; /* Centers elements horizontally */
+        padding: 10px;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        max-width: 60%;
+        margin: 10px;
+    }
+
+    .cart-link {
+        font-size: 35px; /* Reduce cart size */
+        margin: 5px;
+        margin-top: 2px;
+    }
+
+    .contact-link {
+        font-size: 16px;
+        padding: 8px 12px;
+        margin: 5px;
+    }
+    .logo {
+        width: 25%; /* Increase size for better visibility */
+        max-width: 120px; /* Prevent it from being too large */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
+
 /* Centering the menu container */
 .container {
-    width: 90%;
-    max-width: 500px;
+    width: 60%;
+    
     margin: 20px auto;
     margin-top: 200px;
     margin-bottom: 50px;
     background: white;
     padding: 20px;
+
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -123,13 +165,15 @@ h1 {
     margin: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    max-height: 70%;
 }
 
 .category img {
     width: 100%;
-    height: 220px;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    align-items: center;
 }
 
 /* Hover effect */
@@ -156,9 +200,10 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 800px;
+    width: 60%;
     margin-left: 50px;
     align-items: flex-start;
+    padding-bottom: 20px;
 }
 
 /* Each Burger Item */
@@ -209,22 +254,30 @@ h1 {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
-/* Back Button */
 .back-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
+    font-size: 20px; /* Make it smaller */
+    padding: 20px 20px;
+    padding: 20px;
+    margin: 20px;
     background: #333;
     color: white;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Adjust button width */
+    height: 40px; /* Adjust button height */
+}
+
+.back-btn span {
+    font-size: 30px; /* Adjust the icon size */
 }
 
 .back-btn:hover {
     background: #555;
-    transform: scale(1.4);
+    transform: scale(1.2);
 }
 
 
