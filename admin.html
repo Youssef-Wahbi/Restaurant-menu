@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="restaurant.css" />
+
+  <style>
+    input[type="file"]::file-selector-button {
+      content: "Choose Image";
+    }
+  </style>
+
+</head>
+<body>
+  <header class="navbar">
+    <img src="logo2.jpg" alt="Logo" class="logo">
+    <h2 style="color: white;">Admin Panel</h2>
+  </header>
+
+  <div class="container" style="margin-top: 160px;">
+    <h1>Manage Menu</h1>
+
+    <select id="categorySelect" class="search-bar" onchange="loadCategoryItems()">
+      <option value="">Choose Category</option>
+      <option value="burger">Burger</option>
+      <option value="pizza">Pizza</option>
+      <option value="crepe">Crepe</option>
+    </select>
+
+    <div id="itemsContainer" class="burger-menu"></div>
+
+    <h2>Add New Item</h2>
+    <input type="text" id="newName" placeholder="Name" class="search-bar"><br><br>
+    <input type="text" id="newDesc" placeholder="Description" class="search-bar"><br><br>
+    <input type="file" id="newImg" accept="image/*" style="display: none;">
+<label for="newImg" class="custom-file-btn">Choose Image</label>
+<span id="file-name" style="margin-left: 10px;"></span>
+<br><br>
+    <button onclick="addNewItem()" class="order-btn">Add Item</button>
+  </div>
+
+  <script>
+    function loadCategoryItems() {
+        const category = document.getElementById("categorySelect").value;
+        const container = document.getElementById("itemsContainer");
+        container.innerHTML = "";
+
+        const items = JSON.parse(localStorage.getItem("foodItems")) || [];
+        const filtered = items.filter(item => item.category === category);
+
+        filtered.forEach((item, index) => {
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "burger-item";
+            itemDiv.innerHTML = `
+                <img src="${item.image}" class="burger-img">
+                <div class="burger-info">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <button class="order-btn" onclick="removeItem('${category}', '${item.name}')">Remove</button>
+                </div>
+            `;
+            container.appendChild(itemDiv);
+        });
+    }
+
+    function addNewItem() {
+        const category = document.getElementById("categorySelect").value;
+        const name = document.getElementById("newName").value;
+        const description = document.getElementById("newDesc").value;
+        const imageInput = document.getElementById("newImg");
+
+        if (!name || !description || !imageInput.files[0] || !category) {
+            alert("Please fill all fields and select a category.");
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const image = event.target.result;
+
+            let items = JSON.parse(localStorage.getItem("foodItems")) || [];
+            items.push({ name, description, image, category });
+            localStorage.setItem("foodItems", JSON.stringify(items));
+
+            alert("Item added successfully!");
+            loadCategoryItems();
+
+            document.getElementById("newName").value = "";
+            document.getElementById("newDesc").value = "";
+            document.getElementById("newImg").value = "";
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+    }
+
+    function removeItem(category, name) {
+        let items = JSON.parse(localStorage.getItem("foodItems")) || [];
+        items = items.filter(item => !(item.category === category && item.name === name));
+        localStorage.setItem("foodItems", JSON.stringify(items));
+        loadCategoryItems();
+    }
+
+    document.getElementById("newImg").addEventListener("change", function () {
+  const fileName = this.files[0]?.name || "No file chosen";
+  document.getElementById("file-name").textContent = fileName;
+});
+
+  </script>
+</body>
+</html>

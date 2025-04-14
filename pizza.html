@@ -11,13 +11,15 @@
     <!-- Full-width Logo -->
     <div class="logo-container">
         <header class="navbar">
-            <img src="logo.webp" alt="Restaurant Logo" class="logo">
+            <img src="logo2.jpg" alt="Restaurant Logo" class="logo">
+            
             <button class="back-btn" onclick="goBack()">
                 <span>&#8592;</span>
             </button>
-            <input type="text" class="search-bar" placeholder="Search...">
+            
             <a href="contact.html" class="contact-link">Contact Us</a>
             <a href="cart.html" class="cart-link">🛒</a>
+            <input type="text" class="search-bar" placeholder="Search...">
         </header>
     </div>
 
@@ -64,6 +66,8 @@
                 </div>
             </div>
 
+            <div id="dynamic-food"></div>
+
         </div>
 
         
@@ -74,6 +78,32 @@
         function goBack() {
             window.location.href = "index.html"; 
         }
+
+        function loadDynamicFood() {
+      const foodItems = JSON.parse(localStorage.getItem("foodItems")) || [];
+      const container = document.getElementById("dynamic-food");
+      container.innerHTML = "";
+
+      // Only show items from the 'burger' category
+      const burgers = foodItems.filter(item => item.category === "pizza");
+
+      burgers.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "burger-item";
+        div.innerHTML = `
+          <img src="${item.image}" class="burger-img" alt="${item.name}">
+          <div class="burger-info">
+            <h2>${item.name}</h2>
+            <p>${item.description}</p>
+            <button class="order-btn" onclick="addToCart('${item.name}', 0, '${item.image}')">Order now</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    window.onload = loadDynamicFood;
+    
     </script>
 
 <script src="order.js"></script>
