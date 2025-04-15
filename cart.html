@@ -41,7 +41,7 @@
         listItem.appendChild(itemDetails);
         cartList.appendChild(listItem);
 
-        total += parseFloat(item.price);  // ✅ Ensure price is a number
+        total += parseFloat(item.price);  // Ensure price is a number
     });
 
     cartTotal.textContent = `Total: $${total.toFixed(2)}`;
