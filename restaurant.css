@@ -53,17 +53,60 @@ body {
 }
 .navbar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between; /* Space out elements */
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.5); /* Optional background */
-    position: fixed; /* Keeps it in place */
+    position: fixed;
     top: 0;
     left: 0;
-    top: 0;
-    
     width: 100%;
+    flex-wrap: nowrap; /* Prevents wrapping on desktop */
 }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* keep all items in one row */
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 90px;
+        
+        
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 15px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contact-link {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .cart-link {
+        font-size: 30px;
+    }
+}
+
+
 
 .contact-link {
     font-size: 18px;
