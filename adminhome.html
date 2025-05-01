@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+    <header class="navbar">
+        <img src="logo2.jpg" alt="Restaurant Logo" class="logo">
+        <div class="nav-links">
+            <a href="index.html" class="contact-link">View Customer Site</a>
+            <a href="Sign in.html" class="contact-link">Logout</a>
+        </div>
+    </header>
+
+    <div class="admin-dashboard">
+        <h1></h1>
+        
+        <div class="admin-options">
+            <!-- Option 1: Menu Management -->
+            <div class="admin-card" onclick="window.location.href='admin.html'">
+                <div class="admin-icon">🍽️</div>
+                <h2>Menu Management</h2>
+                <p>Add, remove or edit menu items</p>
+            </div>
+            
+            <!-- Option 2: Table Reservations -->
+            <div class="admin-card" onclick="window.location.href='reservation.html'">
+                <div class="admin-icon">📅</div>
+                <h2>Table Reservations</h2>
+                <p>View and manage all reservations</p>
+            </div>
+            
+            <!-- Option 3: Order Tracking -->
+            <div class="admin-card" onclick="window.location.href='track.html'">
+                <div class="admin-icon">🚚</div>
+                <h2>Order Tracking</h2>
+                <p>Monitor and update order statuses</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="restaurant.js"></script>
+</body>
+</html>

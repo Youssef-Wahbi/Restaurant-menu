@@ -453,5 +453,459 @@ h1 {
     margin-left: 15px;
     vertical-align: middle;
     font-style: italic;
+  }
 
+
+
+
+  /* Tracking Page Styles */
+.tracking-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 160px auto 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tracking-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.tracking-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.tracking-progress::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #ddd;
+    z-index: 1;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ddd;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border: 4px solid white;
+}
+
+.step-label {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.progress-step.active .step-icon {
+    background: #ff6600;
+    color: white;
+}
+
+.progress-step.active .step-label {
+    color: #333;
+    font-weight: bold;
+}
+
+.order-details {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.order-details h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.detail-value {
+    color: #333;
+}
+
+.order-items {
+    margin-bottom: 30px;
+}
+
+.order-items h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.tracking-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.tracking-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.tracking-info h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.tracking-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.order-total {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.grand-total {
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: none;
+    padding-top: 10px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.tracking-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tracking-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tracking-btn:hover {
+    background-color: #cc5500;
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background-color: #e74c3c;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tracking-container {
+        width: 90%;
+        margin-top: 120px;
+        padding: 20px;
+    }
+    
+    .tracking-progress {
+        flex-wrap: wrap;
+    }
+    
+    .progress-step {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .tracking-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tracking-btn {
+        width: 100%;
+    }
+}
   
+
+
+
+
+
+/* Reservations Page Styles */
+.reservations-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 160px auto 50px;
+    padding: 20px;
+}
+
+.reservations-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.reservation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.reservation-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.reservation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.reservation-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.status.confirmed {
+    background: #e3f7e8;
+    color: #28a745;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.reservation-details {
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.detail-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #333;
+    font-weight: 600;
+}
+
+.reservation-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.modify-btn, .cancel-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modify-btn {
+    background: #ff6600;
+    color: white;
+}
+
+.modify-btn:hover {
+    background: #e65c00;
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background: #f8f9fa;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.cancel-btn:hover {
+    background: #dc3545;
+    color: white;
+    transform: scale(1.05);
+}
+
+.new-reservation {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.new-reservation-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.25);
+}
+
+.new-reservation-btn:hover {
+    background: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 102, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reservations-container {
+        width: 95%;
+        margin-top: 120px;
+    }
+    
+    .reservation-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .reservation-actions {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 160px auto 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.admin-dashboard h1 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.admin-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admin-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.admin-card h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.admin-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-dashboard {
+        margin-top: 120px;
+    }
+}
