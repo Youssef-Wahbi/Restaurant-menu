@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+    <header class="navbar">
+        <img src="../images/logo2.jpg" alt="Restaurant Logo" class="logo">
+        <div class="nav-links">
+            <a href="contact.html" class="contact-link">Contact Us</a>
+            <a href="contact.html" class="contact-link">Home Page</a>
+            <a href="cart.html" class="cart-link">🛒</a>
+        </div>
+    </header>
+    
+    
+    
+
+<div class="body-container">
+    <div class="container">
+        <h1>Welcome! Choose Your Meal</h1>
+        <div class="categories">
+            <div class="category" onclick="goToMenu('../components/burger')">
+                <img src="../images/download__7_-removebg-preview.png" alt="Burger">
+                <h2>Burger</h2>
+            </div>
+            <div class="category" onclick="goToMenu('../components/pizza')">
+                <img src="../images/download__8_-removebg-preview.png" alt="Pizza">
+                <h2>Pizza</h2>
+            </div>
+            <div class="category" onclick="goToMenu('../components/crepe')">
+                <img src="../images/images__1_-removebg-preview.png" alt="Crepe">
+                <h2>Crepe</h2>
+            </div>
+        </div>
+        </div>
+    <div class="container">
+        <h1>Welcome! Choose Your Meal</h1>
+        <div class="categories">
+            <div class="category" onclick="goToMenu('burger')">
+                <img src="../images/download__7_-removebg-preview.png" alt="Burger">
+                <h2>Burger</h2>
+            </div>
+            <div class="category" onclick="goToMenu('../components/pizza')">
+                <img src="../images/download__8_-removebg-preview.png" alt="Pizza">
+                <h2>Pizza</h2>
+            </div>
+            <div class="category" onclick="goToMenu('../components/crepe')">
+                <img src="../images/images__1_-removebg-preview.png" alt="Crepe">
+                <h2>Crepe</h2>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+        function goToMenu(category) {
+            window.location.href = category + ".html";
+        }
+
+            let lastScrollY = window.scrollY;
+                const navbar = document.querySelector(".navbar");
+
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > lastScrollY) {
+                        // Scrolling down
+                        navbar.classList.add("navbar-shrink");
+                    } else {
+                        // Scrolling up
+                        navbar.classList.remove("navbar-shrink");
+                    }
+                    lastScrollY = window.scrollY;
+                });
+    </script>
+
+<script src="restaurant.js"></script>
+
+
+</body>
+</html>
