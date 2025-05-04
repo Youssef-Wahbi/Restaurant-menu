@@ -3,8 +3,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.7;
-    background-image: url('Resturant\ image.jpg'); 
-   background-blend-mode:hard-light;
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0,0,0,0.2)),url(background\ image.jpg) center/cover no-repeat;
     color: white;
     background-size: cover;  /* Ensures the image covers the entire screen */
     background-position: center; /* Centers the image */
@@ -13,8 +12,7 @@ body {
     height: 100vh; /* Full screen height */
     width: 100vw;
 }
-header {
-    background: rgba(0, 0, 0, 0.5);
+header { 
     color: #fff;
     padding: 1rem;
     display: flex;
@@ -110,7 +108,7 @@ main {
     text-align: center;
 }
 footer {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     color: #fff;
     text-align: center;
     bottom: 0;
