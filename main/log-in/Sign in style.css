@@ -2,15 +2,14 @@
 
 
 :root {
-
---primary-color: #001936;
---secondary-color: #535354;
---background-color: #EFEFEF;
---shadow-color: rgba(0, 0, 0, 0.1);
---white-color: #FFF;
---black-color: #000;
---input-border-color: #E3E4E6;
---transition-3s: 0.3s;
+    --primary-color: #543310;       /* Dark brown */
+    --secondary-color: #AF8F6F;     /* Light brown */
+    --background-color: #F8F4E1;    /* Cream */
+    --shadow-color: rgba(84, 51, 16, 0.1);
+    --white-color: #FFF;
+    --black-color: #333;
+    --input-border-color: #E3E4E6;
+    --transition-3s: 0.3s;
 }
 
 *{
@@ -233,4 +232,35 @@ body{
     .wrapper{
         margin: 20px;
     }
+}
+
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    /* ... (rest of button styles remain the same) ... */
+}
+
+.btn-submit:hover {
+    background-color: #74512D;  /* Medium brown */
+    gap: 15px;
+}
+
+.input-field:focus {
+    border: 1px solid var(--primary-color);
+}
+
+.input-field:focus ~ .label,
+.input-field:valid ~ .label {
+    color: var(--primary-color);
+}
+
+.switch-form a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.switch-form a:hover {
+    color: #74512D;  /* Medium brown */
+    text-decoration: none;
 }

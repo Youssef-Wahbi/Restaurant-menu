@@ -1,84 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Menu</title>
+    <title>Sanra Rita | Handcrafted Culinary Delights</title>
     <link rel="stylesheet" href="restaurant.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header class="navbar">
         <img src="../images/logo2.jpg" alt="Restaurant Logo" class="logo">
-        <div class="nav-links">
-            <a href="contact.html" class="contact-link">Contact Us</a>
-            <a href="contact.html" class="contact-link">Home Page</a>
-            <a href="cart.html" class="cart-link">🛒</a>
+    
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="../main/index.html" class="nav-link">Home</a>
+                <a href="" class="nav-link">Contact</a>
+                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../components/admin.html" class="nav-link">Admin</a>
+                <a href="../components/cart.html" class="cart-link">
+                    <img src="../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+                </a>
+            </div>
         </div>
     </header>
-    
-    
-    
 
-<div class="body-container">
-    <div class="container">
-        <h1>Welcome! Choose Your Meal</h1>
-        <div class="categories">
-            <div class="category" onclick="goToMenu('../components/burger')">
-                <img src="../images/download__7_-removebg-preview.png" alt="Burger">
-                <h2>Burger</h2>
-            </div>
-            <div class="category" onclick="goToMenu('../components/pizza')">
-                <img src="../images/download__8_-removebg-preview.png" alt="Pizza">
-                <h2>Pizza</h2>
-            </div>
-            <div class="category" onclick="goToMenu('../components/crepe')">
-                <img src="../images/images__1_-removebg-preview.png" alt="Crepe">
-                <h2>Crepe</h2>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Santa Rita</h1>
+            <p>Where traditional craftsmanship meets modern culinary artistry</p>
+            <div class="hero-buttons">
+                <a href="../components/reservation/reservation.html" class="btn btn-outline">Book a Table</a>
             </div>
         </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Our Culinary Collections</h2>
+        <div class="menu-categories">
+            <div class="category-card" onclick="goToMenu('../components/burger')">
+                <div class="category-img-container">
+                    <img src="../images/download__7_-removebg-preview.png" alt="Artisan Burgers" class="category-img">
+                </div>
+                <div class="category-info">
+                    <h3>Artisan Burgers</h3>
+                    <p>Handcrafted patties with premium local beef and house-made buns</p>
+                    <span class="btn">View Selection</span>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="goToMenu('../components/pizza')">
+                <div class="category-img-container">
+                    <img src="../images/download__8_-removebg-preview.png" alt="Wood-Fired Pizzas" class="category-img">
+                </div>
+                <div class="category-info">
+                    <h3>Wood-Fired Pizzas</h3>
+                    <p>72-hour fermented dough with seasonal toppings from local farms</p>
+                    <span class="btn">View Selection</span>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="goToMenu('../components/crepe')">
+                <div class="category-img-container">
+                    <img src="../images/images__1_-removebg-preview.png" alt="French Crêpes" class="category-img">
+                </div>
+                <div class="category-info">
+                    <h3>French Crêpes</h3>
+                    <p>Authentic Breton-style crêpes with both sweet and savory fillings</p>
+                    <span class="btn">View Selection</span>
+                </div>
+            </div>
         </div>
-    <div class="container">
-        <h1>Welcome! Choose Your Meal</h1>
-        <div class="categories">
-            <div class="category" onclick="goToMenu('burger')">
-                <img src="../images/download__7_-removebg-preview.png" alt="Burger">
-                <h2>Burger</h2>
+    </section>
+
+    <section class="section featured">
+        <h2 class="section-title">Chef's Selections</h2>
+        <div class="featured-items">
+            <div class="featured-card">
+                <img src="../images/download__7_-removebg-preview.png" alt="Signature Burger" class="featured-img">
+                <div class="featured-content">
+                    <h3>The Artisan Burger</h3>
+                    <p>Dry-aged beef patty with caramelized onions and truffle aioli</p>
+                    <div class="price">$16.50</div>
+                    <button class="btn" onclick="addToCart('Artisan Burger', 16.5, '../images/download__7_-removebg-preview.png')">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
-            <div class="category" onclick="goToMenu('../components/pizza')">
-                <img src="../images/download__8_-removebg-preview.png" alt="Pizza">
-                <h2>Pizza</h2>
+
+            <div class="featured-card">
+                <img src="../images/download__8_-removebg-preview.png" alt="Truffle Pizza" class="featured-img">
+                <div class="featured-content">
+                    <h3>Truffle & Mushroom Pizza</h3>
+                    <p>Wild mushrooms, fontina cheese, and black truffle oil</p>
+                    <div class="price">$19.00</div>
+                    <button class="btn" onclick="addToCart('Truffle Pizza', 19, '../images/download__8_-removebg-preview.png')">
+                        Add to Cart
+                    </button>
+                </div>
             </div>
-            <div class="category" onclick="goToMenu('../components/crepe')">
-                <img src="../images/images__1_-removebg-preview.png" alt="Crepe">
-                <h2>Crepe</h2>
+
+            <div class="featured-card">
+                <img src="../images/images__1_-removebg-preview.png" alt="Berry Crêpe" class="featured-img">
+                <div class="featured-content">
+                    <h3>Berry Medley Crêpe</h3>
+                    <p>Seasonal berries with vanilla bean mascarpone</p>
+                    <div class="price">$11.50</div>
+                    <button class="btn" onclick="addToCart('Berry Crêpe', 11.5, '../images/download__7_-removebg-preview.png')">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Diner Experiences</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The attention to detail in every dish is remarkable. The burger was
+                    perfectly cooked and the homemade bun made all the difference."
+                </p>
+                <p class="testimonial-author">- Michael R.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "We come here every Friday for their wood-fired pizza. The crust has
+                    the perfect chew and the ingredients are always fresh."
+                </p>
+                <p class="testimonial-author">- Sarah L.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    "The crêpes remind me of my time in Paris. Light, delicate, and
+                    filled with just the right amount of delicious filling."
+                </p>
+                <p class="testimonial-author">- Jacques B.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Artisan Eats</h3>
+                <p>
+                    Crafting memorable dining experiences with locally-sourced
+                    ingredients and traditional techniques since 2012.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-hours">
+                <h3>Hours</h3>
+                <ul class="footer-links">
+                    <li>Monday - Thursday: 11am - 10pm</li>
+                    <li>Friday - Saturday: 11am - 11pm</li>
+                    <li>Sunday: 10am - 9pm</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>123 Culinary Avenue</li>
+                    <li>Gourmet City, GC 12345</li>
+                    <li>(555) 123-4567</li>
+                    <li>info@artisaneats.com</li>
+                </ul>
             </div>
         </div>
 
-    </div>
-    </div>
+        <div class="copyright">
+            <p>&copy; 2023 Artisan Eats. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
+        updateCartCount();
+
         function goToMenu(category) {
-            window.location.href = category + ".html";
+            window.location.href = category + '.html';
         }
 
-            let lastScrollY = window.scrollY;
-                const navbar = document.querySelector(".navbar");
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > lastScrollY) {
-                        // Scrolling down
-                        navbar.classList.add("navbar-shrink");
-                    } else {
-                        // Scrolling up
-                        navbar.classList.remove("navbar-shrink");
-                    }
-                    lastScrollY = window.scrollY;
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
                 });
-    </script>
+            }
 
-<script src="restaurant.js"></script>
+            localStorage.setItem('cart', JSON.stringify(cart));
+            showNotification(`${name} added to cart!`, 'success');
+            updateCartCount();
+        }
 
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+            document.querySelector('.cart-count').textContent = count;
+            document.querySelector('.cart-count').style.display = count > 0 ? 'block' : 'none';
+        }
 
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => notification.classList.add('show'), 10);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => document.body.removeChild(notification), 300);
+            }, 3000);
+        }
+
+        </script>
 </body>
+
 </html>

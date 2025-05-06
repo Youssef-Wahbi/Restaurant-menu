@@ -1,68 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
+    <title>Your Order | Artisan Eats</title>
     <link rel="stylesheet" href="../main/restaurant.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
 
-    <div class="cart-container">
-        <h1>🛒 Your Shopping Cart</h1>
-        <ul id="cart-items"></ul>
-        <p id="cart-total">Total: $0.00</p>
-        <button class="cart-btn clear" onclick="clearCart()">Clear Cart</button>
-        <button class="cart-btn back" onclick="goBack()">⬅ Back to Menu</button>
-    </div>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Navigation -->
+    <header class="navbar">
+        <!-- Logo on left -->
+        <img src="../images/logo2.jpg" alt="Restaurant Logo" class="logo">
+    
+        <!-- Navigation links on right -->
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="../main/index.html" class="nav-link">Home</a>
+                <a href="" class="nav-link">Contact</a>
+                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../components/cart.html" class="cart-link">
+                    <img src="../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Container -->
+    <main class="cart-container">
+        <div class="cart-header">
+            <h1><i class="fas fa-shopping-cart"></i> Your Order</h1>
+            <p class="cart-subtitle">Review your items before checkout</p>
+        </div>
+
+        <div class="cart-content">
+            <div class="cart-items-container">
+                <div class="cart-column-headers">
+                    <span class="item-header">Item</span>
+                    <span class="price-header">Price</span>
+                    <span class="qty-header">Qty</span>
+                    <span class="total-header">Total</span>
+                </div>
+
+                <div id="cart-items" class="cart-items"></div>
+
+                <div class="cart-actions">
+                    <button class="btn btn-continue" onclick="window.location.href='../main/index.html'">
+                        <i class="fas fa-chevron-left"></i> Continue Shopping
+                    </button>
+                    <button class="btn btn-clear" onclick="clearCart()">
+                        <i class="fas fa-trash"></i> Clear Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (8%):</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+                <button class="btn btn-checkout" onclick="checkout()">
+                    Proceed to Checkout <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script>
-       function loadCart() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartList = document.getElementById("cart-items");
-    const cartTotal = document.getElementById("cart-total");
+        // Load cart on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            loadCart();
+            updateCartCount();
+        });
 
-    cartList.innerHTML = ""; 
-    let total = 0;
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
 
-    cart.forEach(item => {
-        let listItem = document.createElement("li");
-        listItem.classList.add("cart-item");
+            let subtotal = 0;
 
-        let itemImage = document.createElement("img");
-        itemImage.src = item.image;
-        itemImage.alt = item.name;
-        itemImage.classList.add("cart-img");
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                        <button class="btn" onclick="window.location.href='../main/index.html'">Browse Menu</button>
+                    </div>
+                `;
+                document.querySelector('.cart-summary').style.display = 'none';
+                return;
+            }
 
-        let itemDetails = document.createElement("div");
-        itemDetails.innerHTML = `<strong>${item.name}</strong> - $${item.price.toFixed(2)}`;
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * (item.quantity || 1);
+                subtotal += itemTotal;
 
-        listItem.appendChild(itemImage);
-        listItem.appendChild(itemDetails);
-        cartList.appendChild(listItem);
+                const cartItem = document.createElement("div");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <div class="item-info">
+                        <img src="${item.image.startsWith('../') ? item.image : '../images/' + item.image}" 
+                             alt="${item.name}" class="cart-item-img">
+                        <div class="item-details">
+                            <h3>${item.name}</h3>
+                            <button class="btn-remove" onclick="removeItem(${index})">
+                                <i class="fas fa-times"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-price">$${item.price.toFixed(2)}</div>
+                    <div class="item-quantity">
+                        <button class="qty-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity || 1}</span>
+                        <button class="qty-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                    </div>
+                    <div class="item-total">$${itemTotal.toFixed(2)}</div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
 
-        total += parseFloat(item.price);  // Ensure price is a number
-    });
+            // Update totals
+            const tax = subtotal * 0.08;
+            const total = subtotal + tax;
 
-    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-}
+            document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById("tax").textContent = `$${tax.toFixed(2)}`;
+            document.getElementById("total").textContent = `$${total.toFixed(2)}`;
+        }
 
+        function updateQuantity(index, change) {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart[index]) {
+                cart[index].quantity = (cart[index].quantity || 1) + change;
 
+                // Remove if quantity is 0 or less
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
 
-        
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+                updateCartCount();
+            }
+        }
+
+        function removeItem(index) {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+            updateCartCount();
+        }
 
         function clearCart() {
-            localStorage.removeItem("cart");
-            loadCart();
+            if (confirm("Are you sure you want to clear your cart?")) {
+                localStorage.removeItem("cart");
+                loadCart();
+                updateCartCount();
+            }
         }
 
-        function goBack() {
-            window.location.href = "index.html";
+        function checkout() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            alert("Proceeding to checkout! (This would redirect to a payment page in a real implementation)");
+            // In a real implementation: window.location.href = "checkout.html";
         }
 
-        window.onload = loadCart;
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+            document.querySelector('.cart-count').textContent = count;
+        }
     </script>
-
 </body>
-</html>
 
+</html>

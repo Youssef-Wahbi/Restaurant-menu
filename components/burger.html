@@ -1,109 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Burger Menu</title>
-  <link rel="stylesheet" href="../main/restaurant.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourmet Burgers | Artisan Eats</title>
+  <link rel="stylesheet" href="../main/restaurant.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-
-  
-  <div class="logo-container">
-    <header class="navbar">
-      <img src="../images/logo2.jpg" alt="Restaurant Logo" class="logo">
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <a href="../main/index.html">
+      <img src="../images/logo2.jpg" alt="Artisan Eats" class="logo">
+    </a>
+    <div class="nav-right">
       <div class="nav-links">
-        <button class="back-btn" onclick="goBack()"><span>&#8592;</span></button>
-          <a href="contact.html" class="contact-link">Contact Us</a>
-          <a href="cart.html" class="cart-link">🛒</a>
+        <a href="../main/index.html" class="nav-link">Home</a>
+        <a href="../components/contact.html" class="nav-link">Contact</a>
+        <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
+        <a href="../components/cart.html" class="cart-link">
+          <img src="../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+        </a>
       </div>
-  </header>
-  </div>
-
-  
-  
-  <div class="container_burger">
-    <h1></h1>
-
-    <div class="burger-menu">
-      <!-- Hardcoded burgers -->
-      <div class="burger-item">
-        <img src="../images/download__7_-removebg-preview.png" alt="Cheese Burger" class="burger-img" />
-        <div class="burger-info">
-          <h2>Cheese Burger</h2>
-          <p>A delicious beef patty with melted cheese, lettuce, and special sauce.</p>
-          <button class="order-btn" onclick="addToCart('Cheeseburger', 5.99, 'download__7_-removebg-preview.png')">Order Now</button>
-        </div>
-      </div>
-
-      <div class="burger-item">
-        <img src="../images/download__7_-removebg-preview.png" alt="Chicken Burger" class="burger-img" />
-        <div class="burger-info">
-          <h2>Chicken Burger</h2>
-          <p>Crispy fried chicken with fresh lettuce, tomatoes, and mayo.</p>
-          <button class="order-btn" onclick="addToCart('Chicken Burger', 7.11, '../images/download__7_-removebg-preview.png')">Order Now</button>
-        </div>
-      </div>
-
-      <div class="burger-item">
-        <img src="../images/download__7_-removebg-preview.png" alt="Double Burger" class="burger-img" />
-        <div class="burger-info">
-          <h2>Double Burger</h2>
-          <p>Two juicy beef patties stacked with cheese, lettuce, and pickles.</p>
-          <button class="order-btn" onclick="addToCart('Double Burger', 9.00, '../images/download__7_-removebg-preview.png')">Order Now</button>
-        </div>
-      </div>
-
-      <div class="burger-item">
-        <img src="../images/download__7_-removebg-preview.png" alt="Vegan Burger" class="burger-img" />
-        <div class="burger-info">
-          <h2>Vegan Burger</h2>
-          <p>A plant-based burger with fresh veggies and a tasty vegan sauce.</p>
-          <button class="order-btn" onclick="addToCart('Vegan Burger', 4.5, '../images/download__7_-removebg-preview.png')">Order Now</button>
-        </div>
-      </div>
-
-      <!-- Dynamic items added from admin panel -->
-      <div id="dynamic-food"></div>
     </div>
-  </div>
+  </header>
+
+  <!-- Menu Header -->
+  <section class="menu-header" style="background-image: url('../components/about-us/images/chef\ 3.avif')">
+    <div class="menu-header-content">
+      <h1>Gourmet Burgers</h1>
+      <p>Handcrafted with premium ingredients and artisanal buns</p>
+    </div>
+  </section>
+
+  <!-- Menu Items -->
+  <section class="menu-container">
+    <div class="menu-category">
+      <h2 class="category-title">Classic Burgers</h2>
+      <div class="menu-items">
+        <!-- Item 1 -->
+        <div class="menu-item">
+          <div class="item-image">
+            <img src="../images/download__7_-removebg-preview.png" alt="Classic Cheeseburger">
+          </div>
+          <div class="item-info">
+            <h3>Classic Cheeseburger</h3>
+            <p>Angus beef patty, American cheese, lettuce, tomato, pickles, special sauce</p>
+            <div class="item-footer">
+              <span class="price">$12.99</span>
+              <button class="btn"
+                onclick="addToCart('Classic Cheeseburger', 12.99, '../images/download__7_-removebg-preview.png')">Add to
+                Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-item">
+          <div class="item-image">
+            <img src="../images/download__7_-removebg-preview.png" alt="BBQ Bacon Burger">
+          </div>
+          <div class="item-info">
+            <h3>BBQ Bacon Burger</h3>
+            <p>Beef patty, cheddar, crispy bacon, caramelized onions, BBQ sauce</p>
+            <div class="item-footer">
+              <span class="price">$14.99</span>
+              <button class="btn"
+                onclick="addToCart('BBQ Bacon Burger', 14.99, '../images/download__7_-removebg-preview.png')">Add to
+                Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h2 class="category-title">Specialty Burgers</h2>
+      <div class="menu-items">
+        <!-- Item 3 -->
+        <div class="menu-item">
+          <div class="item-image">
+            <img src="../images/download__7_-removebg-preview.png" alt="Double Trouble Burger">
+          </div>
+          <div class="item-info">
+            <h3>Double Trouble Burger</h3>
+            <p>Two beef patties, double cheese, bacon, special sauce</p>
+            <div class="item-footer">
+              <span class="price">$16.99</span>
+              <button class="btn"
+                onclick="addToCart('Double Trouble Burger', 16.99, '../images/download__7_-removebg-preview.png')">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Items -->
+        <div id="dynamic-food" class="menu-items"></div>
+      </div>
+    </div>
+  </section>
 
   <script>
-    function goBack() {
-      window.location.href = "index.html";
-    }
-
+    // Load dynamic items
     function loadDynamicFood() {
       const foodItems = JSON.parse(localStorage.getItem("foodItems")) || [];
       const container = document.getElementById("dynamic-food");
       container.innerHTML = "";
 
-      // Only show items from the 'burger' category
       const burgers = foodItems.filter(item => item.category === "burger");
 
       burgers.forEach(item => {
         const div = document.createElement("div");
-        div.className = "burger-item";
+        div.className = "menu-item";
         div.innerHTML = `
-          <img src="${item.image}" class="burger-img" alt="${item.name}">
-          <div class="burger-info">
-            <h2>${item.name}</h2>
-            <p>${item.description}</p>
-            <button class="order-btn" onclick="addToCart('${item.name}', 0, '${item.image}')">Order now</button>
-          </div>
-        `;
+                    <div class="item-image">
+                        <img src="../images/download__7_-removebg-preview.png" alt="${item.name}">
+                    </div>
+                    <div class="item-info">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <div class="item-footer">
+                            <span class="price">$${item.price?.toFixed(2) || '0.00'}</span>
+                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '../images/download__7_-removebg-preview.png')">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
         container.appendChild(div);
       });
     }
 
-    window.onload = loadDynamicFood;
-
-    // Placeholder function for "Add to Cart"
     function addToCart(name, price, image) {
-      alert(`Added "${name}" to cart!`);
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price, image });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
     }
-  </script>
 
-  <script src="order.js"></script>
+    window.onload = loadDynamicFood;
+  </script>
 </body>
+
 </html>

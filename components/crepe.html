@@ -1,111 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>crepe Menu</title>
+    <title>Artisan Crêpes | Artisan Eats</title>
     <link rel="stylesheet" href="../main/restaurant.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="../main/index.html">
+            <img src="../images/logo2.jpg" alt="Artisan Eats" class="logo">
+        </a>
 
-    
-    <div class="logo-container">
-        <header class="navbar">
-            <img src="../images/logo2.jpg" alt="Restaurant Logo" class="logo">
-            <div class="nav-links">
-              <button class="back-btn" onclick="goBack()"><span>&#8592;</span></button>
-                <a href="contact.html" class="contact-link">Contact Us</a>
-                <a href="cart.html" class="cart-link">🛒</a>
-            </div>
-        </header>
-            
-        
-    </div>
+        <div class="nav-right">
+            <nav class="nav-links">
+                <a href="../main/index.html" class="nav-link">Home</a>
+                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../components/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="../components/cart.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
 
-   
-    <div class="container_burger">
-        <h1></h1>
+    <!-- Menu Header -->
+    <section class="menu-header"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./about-us/images/resturant\ chef\ 2.jpg')">
+        <div class="menu-header-content">
+            <h1>Artisan Crêpes</h1>
+            <p>Authentic French-style crêpes with sweet and savory fillings</p>
+        </div>
+    </section>
 
-        
-        <div class="burger-menu">
+    <!-- Menu Items -->
+    <section class="menu-container">
+        <div class="menu-category">
+            <h2 class="category-title">Sweet Crêpes</h2>
+            <div class="menu-items">
+                <!-- Item 1 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="../images/images__1_-removebg-preview.png" alt="Nutella Crêpe">
+                    </div>
+                    <div class="item-info">
+                        <h3>Classic Nutella</h3>
+                        <p>Fresh crêpe filled with Nutella and topped with powdered sugar</p>
+                        <div class="item-footer">
+                            <span class="price">$8.99</span>
+                            <button class="btn"
+                                onclick="addToCart('Nutella Crêpe', 8.99, '../images/images__1_-removebg-preview.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="burger-item">
-                <img src="../images/images__1_-removebg-preview.png" alt="" class="burger-img">
-                <div class="burger-info">
-                    <h2>Chocolate Crepe</h2>
-                    <p>Delicious thin crepe filled with melted chocolate and topped with powdered sugar.</p>
-                    <button class="order-btn" onclick="addToCart(' Chocolate crepe', 4.99, '../images/images__1_-removebg-preview.png')">Order Now</button>
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="../images/images__1_-removebg-preview.png" alt="Mixed Berry Crêpe">
+                    </div>
+                    <div class="item-info">
+                        <h3>Mixed Berry</h3>
+                        <p>Fresh strawberries, blueberries, and raspberries with whipped cream</p>
+                        <div class="item-footer">
+                            <span class="price">$9.99</span>
+                            <button class="btn"
+                                onclick="addToCart('Mixed Berry Crêpe', 9.99, '../images/images__1_-removebg-preview.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="../images/images__1_-removebg-preview.png" alt="Banana Caramel Crêpe">
+                    </div>
+                    <div class="item-info">
+                        <h3>Banana Caramel</h3>
+                        <p>Sliced bananas, caramel sauce, and vanilla ice cream</p>
+                        <div class="item-footer">
+                            <span class="price">$10.99</span>
+                            <button class="btn"
+                                onclick="addToCart('Banana Caramel Crêpe', 10.99, '../images/images__1_-removebg-preview.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="burger-item">
-                <img src="../images/images__1_-removebg-preview.png" alt="Strawberry Crepe" class="burger-img">
-                <div class="burger-info">
-                    <h2>Strawberry Crepe</h2>
-                    <p>Fresh strawberries and whipped cream wrapped in a soft, warm crepe.</p>
-                    <button class="order-btn" onclick="addToCart('strawberry crepe', 4.99, '../images/images__1_-removebg-preview.png')">Order Now</button>
-                </div>
-            </div>
-
-            <div class="burger-item">
-                <img src="../images/images__1_-removebg-preview.png" alt="Nutella Crepe" class="burger-img">
-                <div class="burger-info">
-                    <h2>Nutella Crepe</h2>
-                    <p>A classic favorite filled with Nutella and topped with banana slices.</p>
-                    <button class="order-btn" onclick="addToCart('Nutella Crepe', 7.5, '../images/images__1_-removebg-preview.png')">Order Now</button>
-                </div>
-            </div>
-
-            <div class="burger-item">
-                <img src="../images/images__1_-removebg-preview.png" alt="Savory Crepe" class="burger-img">
-                <div class="burger-info">
-                    <h2>Savory Crepe</h2>
-                    <p>Filled with cheese, ham, and fresh herbs for a tasty savory option.</p>
-                    <button class="order-btn" onclick="addToCart('savory crepe', 5.99, '../images/images__1_-removebg-preview.png')">Order Now</button>
-                </div>
-            </div>
-
-            <div id="dynamic-food"></div>
-            
         </div>
 
-        
+        <div class="menu-category">
+            <h2 class="category-title">Savory Crêpes</h2>
+            <div class="menu-items">
+                <!-- Item 4 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="../images/images__1_-removebg-preview.png" alt="Ham & Cheese Crêpe">
+                    </div>
+                    <div class="item-info">
+                        <h3>Ham & Cheese</h3>
+                        <p>Black forest ham, Swiss cheese, and béchamel sauce</p>
+                        <div class="item-footer">
+                            <span class="price">$11.99</span>
+                            <button class="btn"
+                                onclick="addToCart('Ham & Cheese Crêpe', 11.99, '../images/images__1_-removebg-preview.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-    </div>
+                <!-- Item 5 -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="../images/images__1_-removebg-preview.png" alt="Spinach & Mushroom Crêpe">
+                    </div>
+                    <div class="item-info">
+                        <h3>Spinach & Mushroom</h3>
+                        <p>Sautéed spinach, mushrooms, and goat cheese</p>
+                        <div class="item-footer">
+                            <span class="price">$12.99</span>
+                            <button class="btn"
+                                onclick="addToCart('Spinach & Mushroom Crêpe', 12.99, '../images/images__1_-removebg-preview.png')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Items -->
+                <div id="dynamic-food" class="menu-items"></div>
+            </div>
+        </div>
+    </section>
 
     <script>
-        function goBack() {
-            window.location.href = "index.html"; // Change this to your homepage file
+        // Load dynamic items
+        function loadDynamicFood() {
+            const foodItems = JSON.parse(localStorage.getItem("foodItems")) || [];
+            const container = document.getElementById("dynamic-food");
+            container.innerHTML = "";
+
+            const crepes = foodItems.filter(item => item.category === "crepe");
+
+            crepes.forEach(item => {
+                const div = document.createElement("div");
+                div.className = "menu-item";
+                div.innerHTML = `
+                    <div class="item-image">
+                        <img src="${item.image.startsWith('../') ? item.image : '../images/' + item.image}" alt="${item.name}">
+                    </div>
+                    <div class="item-info">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <div class="item-footer">
+                            <span class="price">$${item.price?.toFixed(2) || '0.00'}</span>
+                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '${item.image.startsWith('../') ? item.image : '../images/' + item.image}')">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
         }
 
-        function loadDynamicFood() {
-      const foodItems = JSON.parse(localStorage.getItem("foodItems")) || [];
-      const container = document.getElementById("dynamic-food");
-      container.innerHTML = "";
+        // Cart functions
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+            document.querySelector('.cart-count').textContent = count;
+            document.querySelector('.cart-count').style.display = count > 0 ? 'block' : 'none';
+        }
 
-      // Only show items from the 'burger' category
-      const burgers = foodItems.filter(item => item.category === "crepe");
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-      burgers.forEach(item => {
-        const div = document.createElement("div");
-        div.className = "burger-item";
-        div.innerHTML = `
-          <img src="${item.image}" class="burger-img" alt="${item.name}">
-          <div class="burger-info">
-            <h2>${item.name}</h2>
-            <p>${item.description}</p>
-            <button class="order-btn" onclick="addToCart('${item.name}', 0, '${item.image}')">Order now</button>
-          </div>
-        `;
-        container.appendChild(div);
-      });
-    }
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity = (existingItem.quantity || 1) + 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
 
-    window.onload = loadDynamicFood;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            showNotification(`${name} added to cart!`);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement("div");
+            notification.className = "notification";
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => notification.classList.add("show"), 10);
+            setTimeout(() => {
+                notification.classList.remove("show");
+                setTimeout(() => document.body.removeChild(notification), 300);
+            }, 3000);
+        }
+
+        // Initialize
+        document.addEventListener("DOMContentLoaded", () => {
+            loadDynamicFood();
+            updateCartCount();
+        });
     </script>
-
-<script src="order.js"></script>
-
 </body>
-</html>
 
+</html>
