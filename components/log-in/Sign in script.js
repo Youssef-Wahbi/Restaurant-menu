@@ -16,7 +16,6 @@ function validateLoginForm() {
     return false;
   }
 
-  // In a real app, you would validate credentials here
   window.location.href = "../main/index.html";
   return false; // Prevent form submission
 }
@@ -37,7 +36,6 @@ function validateRegisterForm() {
     return false;
   }
 
-  // In a real app, you would register the user here
   window.location.href = "../main/index.html";
   return false; // Prevent form submission
 }

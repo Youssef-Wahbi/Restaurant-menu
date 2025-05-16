@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gourmet Burgers | Artisan Eats</title>
-  <link rel="stylesheet" href="../main/restaurant.css">
+  <title>Gourmet Burgers | Santa Rita</title>
+  <link rel="stylesheet" href="../../main/css/restaurant.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500&display=swap"
     rel="stylesheet">
@@ -14,23 +14,25 @@
 <body>
   <!-- Navigation Bar -->
   <header class="navbar">
-    <a href="../main/index.html">
-      <img src="../images/logo2.jpg" alt="Artisan Eats" class="logo">
+    <a href="../../main/index.html">
+      <img src="../../images/logo2.jpg" alt="Artisan Eats" class="logo">
     </a>
     <div class="nav-right">
       <div class="nav-links">
-        <a href="../main/index.html" class="nav-link">Home</a>
-        <a href="../components/contact.html" class="nav-link">Contact</a>
-        <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
-        <a href="../components/cart.html" class="cart-link">
-          <img src="../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+        <a href="../../main/index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Contact</a>
+        <a href="../../components/about-us/AboutUS.html" class="nav-link">About</a>
+
+        <a href="../../components/cart.html" class="cart-link">
+          <img src="../../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
         </a>
+
       </div>
     </div>
   </header>
 
   <!-- Menu Header -->
-  <section class="menu-header" style="background-image: url('../components/about-us/images/chef\ 3.avif')">
+  <section class="menu-header" style="background-image: url('../../components/about-us/images/chef\ 3.avif')">
     <div class="menu-header-content">
       <h1>Gourmet Burgers</h1>
       <p>Handcrafted with premium ingredients and artisanal buns</p>
@@ -45,7 +47,7 @@
         <!-- Item 1 -->
         <div class="menu-item">
           <div class="item-image">
-            <img src="../images/download__7_-removebg-preview.png" alt="Classic Cheeseburger">
+            <img src="../../images/download__7_-removebg-preview.png" alt="Classic Cheeseburger">
           </div>
           <div class="item-info">
             <h3>Classic Cheeseburger</h3>
@@ -53,7 +55,8 @@
             <div class="item-footer">
               <span class="price">$12.99</span>
               <button class="btn"
-                onclick="addToCart('Classic Cheeseburger', 12.99, '../images/download__7_-removebg-preview.png')">Add to
+                onclick="addToCart('Classic Cheeseburger', 12.99, '../../images/download__7_-removebg-preview.png')">Add
+                to
                 Cart</button>
             </div>
           </div>
@@ -62,7 +65,7 @@
         <!-- Item 2 -->
         <div class="menu-item">
           <div class="item-image">
-            <img src="../images/download__7_-removebg-preview.png" alt="BBQ Bacon Burger">
+            <img src="../../images/download__7_-removebg-preview.png" alt="BBQ Bacon Burger">
           </div>
           <div class="item-info">
             <h3>BBQ Bacon Burger</h3>
@@ -70,7 +73,7 @@
             <div class="item-footer">
               <span class="price">$14.99</span>
               <button class="btn"
-                onclick="addToCart('BBQ Bacon Burger', 14.99, '../images/download__7_-removebg-preview.png')">Add to
+                onclick="addToCart('BBQ Bacon Burger', 14.99, '../../images/download__7_-removebg-preview.png')">Add to
                 Cart</button>
             </div>
           </div>
@@ -84,7 +87,7 @@
         <!-- Item 3 -->
         <div class="menu-item">
           <div class="item-image">
-            <img src="../images/download__7_-removebg-preview.png" alt="Double Trouble Burger">
+            <img src="../../images/download__7_-removebg-preview.png" alt="Double Trouble Burger">
           </div>
           <div class="item-info">
             <h3>Double Trouble Burger</h3>
@@ -92,7 +95,7 @@
             <div class="item-footer">
               <span class="price">$16.99</span>
               <button class="btn"
-                onclick="addToCart('Double Trouble Burger', 16.99, '../images/download__7_-removebg-preview.png')">Add
+                onclick="addToCart('Double Trouble Burger', 16.99, '../../images/download__7_-removebg-preview.png')">Add
                 to Cart</button>
             </div>
           </div>
@@ -118,14 +121,14 @@
         div.className = "menu-item";
         div.innerHTML = `
                     <div class="item-image">
-                        <img src="../images/download__7_-removebg-preview.png" alt="${item.name}">
+                        <img src="../../images/download__7_-removebg-preview.png" alt="${item.name}">
                     </div>
                     <div class="item-info">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
                         <div class="item-footer">
                             <span class="price">$${item.price?.toFixed(2) || '0.00'}</span>
-                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '../images/download__7_-removebg-preview.png')">Add to Cart</button>
+                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '../../images/download__7_-removebg-preview.png')">Add to Cart</button>
                         </div>
                     </div>
                 `;

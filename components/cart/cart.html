@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Order | Artisan Eats</title>
-    <link rel="stylesheet" href="../main/restaurant.css">
+    <link rel="stylesheet" href="../../main/css/restaurant.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -15,7 +15,7 @@
     <!-- Navigation -->
     <header class="navbar">
         <!-- Logo on left -->
-        <img src="../images/logo2.jpg" alt="Restaurant Logo" class="logo">
+        <img src="../../images/logo2.jpg" alt="Restaurant Logo" class="logo">
     
         <!-- Navigation links on right -->
         <div class="nav-right">
@@ -105,7 +105,7 @@
                     <div class="empty-cart">
                         <i class="fas fa-shopping-cart"></i>
                         <p>Your cart is empty</p>
-                        <button class="btn" onclick="window.location.href='../main/index.html'">Browse Menu</button>
+                        <button class="btn" onclick="window.location.href='../../main/index.html'">Browse Menu</button>
                     </div>
                 `;
                 document.querySelector('.cart-summary').style.display = 'none';
@@ -120,7 +120,7 @@
                 cartItem.className = "cart-item";
                 cartItem.innerHTML = `
                     <div class="item-info">
-                        <img src="${item.image.startsWith('../') ? item.image : '../images/' + item.image}" 
+                        <img src="${item.image.startsWith('../') ? item.image : '../../images/' + item.image}" 
                              alt="${item.name}" class="cart-item-img">
                         <div class="item-details">
                             <h3>${item.name}</h3>
@@ -188,7 +188,6 @@
                 return;
             }
             alert("Proceeding to checkout! (This would redirect to a payment page in a real implementation)");
-            // In a real implementation: window.location.href = "checkout.html";
         }
 
         function updateCartCount() {

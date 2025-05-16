@@ -13,7 +13,7 @@ body{
 
 .banner{
     min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(jason-leung-poI7DelFiVA-unsplash.jpg) center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../about-us/images/Resturant\ image.jpg) center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@ body{
 }
 
 .card-img{
-    background: url(daniel-JcTGyFY6lWk-unsplash.jpg) center/cover no-repeat;
+    background: url(../about-us/images/resturant\ 4.jpg) center/cover no-repeat;
 }
 
 .banner h2{
