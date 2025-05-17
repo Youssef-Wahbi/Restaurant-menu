@@ -21,12 +21,11 @@
         <!-- Navigation links on right -->
         <div class="nav-right">
             <div class="nav-links">
-                <a href="../main/index.html" class="nav-link">Home</a>
+                <a href="../../main/index.html" class="nav-link">Home</a>
                 <a href="" class="nav-link">Contact</a>
-                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
-                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
-                <a href="../components/cart.html" class="cart-link">
-                    <img src="../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+                <a href="../../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../cart/cart.html" class="cart-link">
+                    <img src="../../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
                 </a>
             </div>
         </div>
@@ -34,7 +33,7 @@
 
     <!-- Menu Header -->
     <section class="menu-header"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./about-us/images/resturant\ image\ 3.jpg')">
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../images/resturant\ image\ 3.jpg')">
         <div class="menu-header-content">
             <h1>Artisan Pizzas</h1>
             <p>Hand-tossed dough, house-made sauce, and premium toppings</p>
@@ -49,7 +48,7 @@
                 <!-- Item 1 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/download__8_-removebg-preview.png" alt="Margherita Pizza">
+                        <img src="../../images/download__8_-removebg-preview.png" alt="Margherita Pizza">
                     </div>
                     <div class="item-info">
                         <h3>Margherita</h3>
@@ -57,7 +56,7 @@
                         <div class="item-footer">
                             <span class="price">$14.99</span>
                             <button class="btn"
-                                onclick="addToCart('Margherita Pizza', 14.99, '../images/download__8_-removebg-preview.png')">
+                                onclick="addToCart('Margherita Pizza', 14.99, '../../images/download__8_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -67,7 +66,7 @@
                 <!-- Item 2 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/download__8_-removebg-preview.png" alt="Pepperoni Pizza">
+                        <img src="../../images/download__8_-removebg-preview.png" alt="Pepperoni Pizza">
                     </div>
                     <div class="item-info">
                         <h3>Pepperoni</h3>
@@ -75,7 +74,7 @@
                         <div class="item-footer">
                             <span class="price">$16.99</span>
                             <button class="btn"
-                                onclick="addToCart('Pepperoni Pizza', 16.99, '../images/download__8_-removebg-preview.png')">
+                                onclick="addToCart('Pepperoni Pizza', 16.99, '../../images/download__8_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -85,7 +84,7 @@
                 <!-- Item 3 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/download__8_-removebg-preview.png" alt="Veggie Pizza">
+                        <img src="../../images/download__8_-removebg-preview.png" alt="Veggie Pizza">
                     </div>
                     <div class="item-info">
                         <h3>Garden Veggie</h3>
@@ -93,7 +92,7 @@
                         <div class="item-footer">
                             <span class="price">$15.99</span>
                             <button class="btn"
-                                onclick="addToCart('Veggie Pizza', 15.99, '../images/download__8_-removebg-preview.png')">
+                                onclick="addToCart('Veggie Pizza', 15.99, '../../images/download__8_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -108,7 +107,7 @@
                 <!-- Item 4 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/download__8_-removebg-preview.png" alt="Truffle Mushroom Pizza">
+                        <img src="../../images/download__8_-removebg-preview.png" alt="Truffle Mushroom Pizza">
                     </div>
                     <div class="item-info">
                         <h3>Truffle Mushroom</h3>
@@ -116,7 +115,7 @@
                         <div class="item-footer">
                             <span class="price">$18.99</span>
                             <button class="btn"
-                                onclick="addToCart('Truffle Mushroom Pizza', 18.99, '../images/download__8_-removebg-preview.png')">
+                                onclick="addToCart('Truffle Mushroom Pizza', 18.99, '../../images/download__8_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -126,7 +125,7 @@
                 <!-- Item 5 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/download__8_-removebg-preview.png" alt="Meat Lovers Pizza">
+                        <img src="../../images/download__8_-removebg-preview.png" alt="Meat Lovers Pizza">
                     </div>
                     <div class="item-info">
                         <h3>Meat Lovers</h3>
@@ -134,7 +133,7 @@
                         <div class="item-footer">
                             <span class="price">$19.99</span>
                             <button class="btn"
-                                onclick="addToCart('Meat Lovers Pizza', 19.99, '../images/download__8_-removebg-preview.png')">
+                                onclick="addToCart('Meat Lovers Pizza', 19.99, '../../images/download__8_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -161,7 +160,7 @@
                 div.className = "menu-item";
                 div.innerHTML = `
                     <div class="item-image">
-                        <img src="${item.image.startsWith('../') ? item.image : '../images/' + item.image}" alt="${item.name}">
+                        <img src="${item.image.startsWith('../../') ? item.image : '../../images/' + item.image}" alt="${item.name}">
                     </div>
                     <div class="item-info">
                         <h3>${item.name}</h3>

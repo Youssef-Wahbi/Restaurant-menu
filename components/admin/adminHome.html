@@ -4,16 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Santa Rita | Handcrafted Culinary Delights</title>
     <link rel="stylesheet" href="../../main/css/restaurant.css">
+    <link rel="stylesheet" href="../../main/css/navbar.css">
+    <link rel="stylesheet" href="../../main/css/hero.css">
+    <link rel="stylesheet" href="../../main/css/menu-categories.css">
+    <link rel="stylesheet" href="../../main/css/featured-items.css">
+    <link rel="stylesheet" href="../../main/css/testimonials.css">
+    <link rel="stylesheet" href="../../main/css/footer.css">
+    <link rel="stylesheet" href="../../main/css/buttons.css">
+    <link rel="stylesheet" href="../../main/css/notifications.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 
 <body>
     <header class="navbar">
+        <!-- Logo on left -->
         <img src="../../images/logo2.jpg" alt="Restaurant Logo" class="logo">
-        <div class="nav-links">
-            <a href="index.html" class="contact-link">View Customer Site</a>
-            <a href="Sign in.html" class="contact-link">Logout</a>
+    
+        <!-- Navigation links on right -->
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="../../main/index.html" class="nav-link">Home</a>
+                <a href="" class="nav-link">Contact</a>
+                <a href="../../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../cart/cart.html" class="cart-link">
+                    <img src="../../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+                </a>
+            </div>
         </div>
     </header>
 
@@ -22,21 +46,21 @@
 
         <div class="admin-options">
             <!-- Option 1: Menu Management -->
-            <div class="admin-card" onclick="window.location.href='../components/admin.html'">
+            <div class="admin-card" onclick="window.location.href='admin.html'">
                 <div class="admin-icon">🍽️</div>
                 <h2>Menu Management</h2>
                 <p>Add, remove or edit menu items</p>
             </div>
 
             <!-- Option 2: Table Reservations -->
-            <div class="admin-card" onclick="window.location.href='../main/reservation.html'">
+            <div class="admin-card" onclick="window.location.href='../reservation/reservation-table.html'">
                 <div class="admin-icon">📅</div>
                 <h2>Table Reservations</h2>
                 <p>View and manage all reservations</p>
             </div>
 
             <!-- Option 3: Order Tracking -->
-            <div class="admin-card" onclick="window.location.href='./track.html'">
+            <div class="admin-card" onclick="window.location.href='../cart/track.html'">
                 <div class="admin-icon">🚚</div>
                 <h2>Order Tracking</h2>
                 <p>Monitor and update order statuses</p>

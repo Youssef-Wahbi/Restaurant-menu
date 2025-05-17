@@ -13,28 +13,26 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <header class="navbar">
-        <a href="../main/index.html">
-            <img src="../../images/logo2.jpg" alt="Artisan Eats" class="logo">
-        </a>
-
+        <!-- Logo on left -->
+        <img src="../../images/logo2.jpg" alt="Restaurant Logo" class="logo">
+    
+        <!-- Navigation links on right -->
         <div class="nav-right">
-            <nav class="nav-links">
-                <a href="../main/index.html" class="nav-link">Home</a>
-                <a href="../components/about-us/AboutUS.html" class="nav-link">About</a>
-                <a href="../components/contact.html" class="nav-link">Contact</a>
-            </nav>
-            <a href="../components/cart.html" class="cart-link">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </a>
+            <div class="nav-links">
+                <a href="../../main/index.html" class="nav-link">Home</a>
+                <a href="" class="nav-link">Contact</a>
+                <a href="../../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../cart/cart.html" class="cart-link">
+                    <img src="../../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Menu Header -->
     <section class="menu-header"
-        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./about-us/images/resturant\ chef\ 2.jpg')">
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../images/resturant\ chef\ 2.jpg')">
         <div class="menu-header-content">
             <h1>Artisan Crêpes</h1>
             <p>Authentic French-style crêpes with sweet and savory fillings</p>
@@ -49,7 +47,7 @@
                 <!-- Item 1 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/images__1_-removebg-preview.png" alt="Nutella Crêpe">
+                        <img src="../../images/images__1_-removebg-preview.png" alt="Nutella Crêpe">
                     </div>
                     <div class="item-info">
                         <h3>Classic Nutella</h3>
@@ -57,7 +55,7 @@
                         <div class="item-footer">
                             <span class="price">$8.99</span>
                             <button class="btn"
-                                onclick="addToCart('Nutella Crêpe', 8.99, '../images/images__1_-removebg-preview.png')">
+                                onclick="addToCart('Nutella Crêpe', 8.99, '../../images/images__1_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -67,7 +65,7 @@
                 <!-- Item 2 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/images__1_-removebg-preview.png" alt="Mixed Berry Crêpe">
+                        <img src="../../images/images__1_-removebg-preview.png" alt="Mixed Berry Crêpe">
                     </div>
                     <div class="item-info">
                         <h3>Mixed Berry</h3>
@@ -75,7 +73,7 @@
                         <div class="item-footer">
                             <span class="price">$9.99</span>
                             <button class="btn"
-                                onclick="addToCart('Mixed Berry Crêpe', 9.99, '../images/images__1_-removebg-preview.png')">
+                                onclick="addToCart('Mixed Berry Crêpe', 9.99, '../../images/images__1_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -85,7 +83,7 @@
                 <!-- Item 3 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/images__1_-removebg-preview.png" alt="Banana Caramel Crêpe">
+                        <img src="../../images/images__1_-removebg-preview.png" alt="Banana Caramel Crêpe">
                     </div>
                     <div class="item-info">
                         <h3>Banana Caramel</h3>
@@ -93,7 +91,7 @@
                         <div class="item-footer">
                             <span class="price">$10.99</span>
                             <button class="btn"
-                                onclick="addToCart('Banana Caramel Crêpe', 10.99, '../images/images__1_-removebg-preview.png')">
+                                onclick="addToCart('Banana Caramel Crêpe', 10.99, '../../images/images__1_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -108,7 +106,7 @@
                 <!-- Item 4 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/images__1_-removebg-preview.png" alt="Ham & Cheese Crêpe">
+                        <img src="../../images/images__1_-removebg-preview.png" alt="Ham & Cheese Crêpe">
                     </div>
                     <div class="item-info">
                         <h3>Ham & Cheese</h3>
@@ -116,7 +114,7 @@
                         <div class="item-footer">
                             <span class="price">$11.99</span>
                             <button class="btn"
-                                onclick="addToCart('Ham & Cheese Crêpe', 11.99, '../images/images__1_-removebg-preview.png')">
+                                onclick="addToCart('Ham & Cheese Crêpe', 11.99, '../../images/images__1_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -126,7 +124,7 @@
                 <!-- Item 5 -->
                 <div class="menu-item">
                     <div class="item-image">
-                        <img src="../images/images__1_-removebg-preview.png" alt="Spinach & Mushroom Crêpe">
+                        <img src="../../images/images__1_-removebg-preview.png" alt="Spinach & Mushroom Crêpe">
                     </div>
                     <div class="item-info">
                         <h3>Spinach & Mushroom</h3>
@@ -134,7 +132,7 @@
                         <div class="item-footer">
                             <span class="price">$12.99</span>
                             <button class="btn"
-                                onclick="addToCart('Spinach & Mushroom Crêpe', 12.99, '../images/images__1_-removebg-preview.png')">
+                                onclick="addToCart('Spinach & Mushroom Crêpe', 12.99, '../../images/images__1_-removebg-preview.png')">
                                 Add to Cart
                             </button>
                         </div>
@@ -161,14 +159,14 @@
                 div.className = "menu-item";
                 div.innerHTML = `
                     <div class="item-image">
-                        <img src="${item.image.startsWith('../') ? item.image : '../images/' + item.image}" alt="${item.name}">
+                        <img src="${item.image.startsWith('../../') ? item.image : '../../images/' + item.image}" alt="${item.name}">
                     </div>
                     <div class="item-info">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
                         <div class="item-footer">
                             <span class="price">$${item.price?.toFixed(2) || '0.00'}</span>
-                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '${item.image.startsWith('../') ? item.image : '../images/' + item.image}')">
+                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '${item.image.startsWith('../../') ? item.image : '../../images/' + item.image}')">
                                 Add to Cart
                             </button>
                         </div>
