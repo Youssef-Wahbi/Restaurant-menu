@@ -217,3 +217,66 @@ textarea.form-control {
     margin-top: 15px;
   }
 }
+
+
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 160px auto 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.admin-dashboard h1 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.admin-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admin-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.admin-card h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.admin-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-dashboard {
+        margin-top: 120px;
+    }
+}

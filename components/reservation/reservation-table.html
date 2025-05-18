@@ -4,16 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Rita | Handcrafted Culinary Delights</title>
+    <title>Reservations | Santa Rita</title>
+    <link rel="stylesheet" href="../../main/css/reservation.css">
     <link rel="stylesheet" href="../../main/css/restaurant.css">
     <link rel="stylesheet" href="../../main/css/navbar.css">
-    <link rel="stylesheet" href="../../main/css/hero.css">
-    <link rel="stylesheet" href="../../main/css/menu-categories.css">
-    <link rel="stylesheet" href="../../main/css/featured-items.css">
-    <link rel="stylesheet" href="../../main/css/testimonials.css">
     <link rel="stylesheet" href="../../main/css/footer.css">
-    <link rel="stylesheet" href="../../main/css/buttons.css">
-    <link rel="stylesheet" href="../../main/css/notifications.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,24 +19,25 @@
 
 <body>
     <header class="navbar">
-        <!-- Logo on left -->
         <img src="../../images/logo2.jpg" alt="Restaurant Logo" class="logo">
-    
-        <!-- Navigation links on right -->
         <div class="nav-right">
             <div class="nav-links">
                 <a href="../../main/index.html" class="nav-link">Home</a>
-                <a href="" class="nav-link">Contact</a>
-                <a href="../../components/about-us/AboutUS.html" class="nav-link">About</a>
+                <a href="../contact/contact.html" class="nav-link">Contact</a>
+                <a href="../about-us/AboutUS.html" class="nav-link">About</a>
                 <a href="../cart/cart.html" class="cart-link">
                     <img src="../../images/download-removebg-preview.png" alt="Cart" class="cart-icon">
+                    <span class="cart-count"></span>
                 </a>
             </div>
         </div>
     </header>
 
-    <div class="reservations-container">
-        <h1></h1>
+    <main class="reservation-container">
+        <div class="reservation-header">
+            <h1><i class="far fa-calendar-alt"></i> Your Reservations</h1>
+            <p class="reservation-subtitle">Manage your upcoming dining experiences</p>
+        </div>
 
         <div class="reservation-cards">
             <!-- Example Reservation Card -->
@@ -65,12 +61,16 @@
                     </div>
                     <div class="detail-row">
                         <span class="detail-label">Reservation ID:</span>
-                        <span class="detail-value">#RES-789456</span>
+                        <span class="detail-value">#RES - 789456</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Special Requests:</span>
+                        <span class="detail-value">Window seating</span>
                     </div>
                 </div>
                 <div class="reservation-actions">
-                    <button class="modify-btn"></button>
-                    <button class="cancel-btn">Cancel</button>
+                    <button class="btn btn-modify">Modify</button>
+                    <button class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
 
@@ -95,27 +95,74 @@
                     </div>
                     <div class="detail-row">
                         <span class="detail-label">Reservation ID:</span>
-                        <span class="detail-value">#RES-123456</span>
+                        <span class="detail-value">#RES - 1234555666</span>
                     </div>
                 </div>
                 <div class="reservation-actions">
-                    <button class="modify-btn"></button>
-                    <button class="cancel-btn">Cancel</button>
+                    <button class="btn btn-modify">Modify</button>
+                    <button class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
         </div>
 
         <div class="new-reservation">
-            <a href="reservation.html" class="new-reservation-btn">Book New Table</a>
+            <a href="reservation.html" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Book New Table
+            </a>
         </div>
-    </div>
+    </main>
 
-    <script src="restaurant.js"></script>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Santa Rita</h3>
+                <p>Crafting memorable dining experiences with locally-sourced ingredients and traditional techniques
+                    since 2012.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
 
-    <!-- Replace the script tag with this: -->
+            <div class="footer-hours">
+                <h3>Hours</h3>
+                <ul class="footer-links">
+                    <li>Monday - Thursday: 11am - 10pm</li>
+                    <li>Friday - Saturday: 11am - 11pm</li>
+                    <li>Sunday: 10am - 9pm</li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>123 Fathy Street</li>
+                    <li>Bors3eed City, GC 12345</li>
+                    <li>01227624045</li>
+                    <li>info@SantaRita.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Santa Rita. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.cancel-btn').forEach(button => {
+            // Update cart count
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const count = cart.reduce((total, item) => total + (item.quantity || 1), 0);
+                document.querySelector('.cart-count').textContent = count > 0 ? count : '';
+            }
+
+            updateCartCount();
+
+            // Cancel reservation functionality
+            document.querySelectorAll('.btn-cancel').forEach(button => {
                 button.addEventListener('click', function () {
                     const card = this.closest('.reservation-card');
                     if (confirm('Are you sure you want to cancel this reservation?')) {
@@ -124,9 +171,16 @@
                     }
                 });
             });
+
+            // Modify reservation functionality
+            document.querySelectorAll('.btn-modify').forEach(button => {
+                button.addEventListener('click', function () {
+                    // In a real implementation, this would load the modify form
+                    alert('Modify functionality would open the reservation form with existing details');
+                });
+            });
         });
     </script>
-
 </body>
 
 </html>
