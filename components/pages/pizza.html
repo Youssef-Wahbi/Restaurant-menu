@@ -28,7 +28,7 @@
     <header class="navbar">
         <!-- Logo on left -->
         <img src="../../images/logo2.jpg" alt="Restaurant Logo" class="logo">
-    
+
         <!-- Navigation links on right -->
         <div class="nav-right">
             <div class="nav-links">
@@ -171,14 +171,14 @@
                 div.className = "menu-item";
                 div.innerHTML = `
                     <div class="item-image">
-                        <img src="${item.image.startsWith('../../') ? item.image : '../../images/' + item.image}" alt="${item.name}">
+                        <img src="../../images/download__8_-removebg-preview.png" alt="${item.name}">
                     </div>
                     <div class="item-info">
                         <h3>${item.name}</h3>
                         <p>${item.description}</p>
                         <div class="item-footer">
                             <span class="price">$${item.price?.toFixed(2) || '0.00'}</span>
-                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '${item.image.startsWith('../') ? item.image : '../images/' + item.image}')">
+                            <button class="btn" onclick="addToCart('${item.name}', ${item.price || 0}, '../../images/download__8_-removebg-preview.png')">Add to Cart</button>
                                 Add to Cart
                             </button>
                         </div>
